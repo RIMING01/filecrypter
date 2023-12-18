@@ -12,14 +12,14 @@ using namespace std;
 
 int main(int argc, char** argv ) {
 	
-	if (argc == 2 && argv[0] == "en") {
+	if (argc == 3 && argv[1] == "en") {
 		int p = get_p(), q = get_q();
 		cout << "正在加密中......" << endl;
 		Rsa rsa(p, q);
 		de d(rsa.malloc_pwd(4));
-		bool flag = encryptfile(string(argv[1]), rsa, d, p, q);
+		bool flag = encryptfile(string(argv[2]), rsa, d, p, q);
 		if (flag) {
-			cout << "成功将文件" << argv[1] << "加密保存至" << string(argv[1]) + ".rsa" << endl;
+			cout << "成功将文件" << argv[2] << "加密保存至" << string(argv[2]) + ".rsa" << endl;
 			system("pause");
 			return 0;
 		}
@@ -29,11 +29,11 @@ int main(int argc, char** argv ) {
 			return -1;
 		}
 	}
-	else if (argc == 3 && (argv[0] == "de")) {
+	else if (argc == 4 && (argv[1] == "de")) {
 		cout << "正在解密中......" << endl;
-		bool flag = decryptfile(string(argv[1]),string(argv[2]));
+		bool flag = decryptfile(string(argv[2]),string(argv[3]));
 		if (flag) {
-			cout << "成功将文件" << argv[1] << "解密保存至" << string(argv[1]) + "." + argv[2] << endl;
+			cout << "成功将文件" << argv[1] << "解密保存至" << string(argv[2]) + "." + argv[3] << endl;
 			system("pause");
 			return 0;
 		}
@@ -43,7 +43,7 @@ int main(int argc, char** argv ) {
 			return -1;
 		}
 	}
-	else if (argc == 0) {
+	else if (argc == 1) {
 		cout << "欢迎使用RSA文件加密工具" << endl << endl;
 		int cmd;
 	here:
