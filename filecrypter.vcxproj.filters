@@ -23,9 +23,6 @@
     <ClInclude Include="rsafile.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="rsa.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="filersacrypt.h">
       <Filter>头文件</Filter>
     </ClInclude>

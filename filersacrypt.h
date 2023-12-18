@@ -2,6 +2,7 @@
 #include "rsa.h"
 #include <string>
 #include <fstream>
+
 bool encryptfile(string fn, Rsa rsa, de d, int p, int q) {
 	fstream f(fn.c_str(), fstream::binary | fstream::in);
 	if (!f) {
@@ -9,7 +10,7 @@ bool encryptfile(string fn, Rsa rsa, de d, int p, int q) {
 	}
 	int fc=0b0;
 	f >> fc;
-	int msg = rsa.encrypt<int>(d.d, fc);
+	int msg = rsa.encrypt(d.d, fc);
 	f.close();
 	fstream fo((fn+".rsa").c_str(), fstream::binary | fstream::out);
 	fo << d << " " << p << " " << q << " " << msg;
@@ -27,7 +28,7 @@ bool decryptfile(string fn,string tuo) {
 	int p, q;
 	f >>d>>p>>q>> fc;
 	Rsa rsa(p, q);
-	int msg = rsa.encrypt<int>(d.d, fc);
+	int msg = rsa.encrypt(d.d, fc);
 	f.close();
 	fstream fo((fn + "."+tuo).c_str(), fstream::binary | fstream::out);
 	fo << msg;

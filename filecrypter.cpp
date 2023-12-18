@@ -1,11 +1,17 @@
 ﻿// filecrypter.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
+
+
 #include "filersacrypt.h"
 #include "snum.h"
 #include <iostream>
 #include <windows.h>
 using namespace std;
-int main(int argc, char** argv) {
+
+
+
+int main(int argc, char** argv ) {
+	
 	if (argc == 2 && argv[0] == "en") {
 		int p = get_p(), q = get_q();
 		cout << "正在加密中......" << endl;
@@ -45,7 +51,7 @@ int main(int argc, char** argv) {
 		cin >> cmd;
 		if (cmd > 2 || cmd < 1) {
 			cout << "命令错误！" << endl;
-			return -1;
+			goto here;
 		}
 		string fn, tuo;
 		cout << "请输入文件名：" << endl;
@@ -73,7 +79,7 @@ int main(int argc, char** argv) {
 			cout << "正在解密中......" << endl;
 			bool flag = decryptfile(fn, tuo);
 			if (flag) {
-				cout << "成功将文件" << argv[1] << "解密保存至" << fn + "." + tuo << endl;
+				cout << "成功将文件" << fn << "解密保存至" << fn + "." + tuo << endl;
 				system("pause");
 				return 0;
 			}
@@ -83,6 +89,10 @@ int main(int argc, char** argv) {
 				return -1;
 			}
 		}
+	}
+	else {
+		cout << "正在调试中" << endl;
+		return 0;
 	}
 }
 
