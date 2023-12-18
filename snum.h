@@ -15,7 +15,7 @@ vector<int> get_snums() {
 		vector<int> snums;
 		bool jump = false;
 		int si;
-		for (int i = 0; snums.size() < 10001; i++) {
+		for (int i = 1; snums.size() < 1001; i++) {
 			si = sqrt(i) + 1;
 			for (int j = 1; j < si; j++) {
 				if (i % j == 0 && i != j) {

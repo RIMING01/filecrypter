@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
 #include <algorithm>
 #include <string>
 #include <map>
@@ -44,14 +45,14 @@ fstream& operator<<(fstream& f, de& d) {
 class Rsa {
 public:
 	Rsa(int p, int q) :p(p), q(q), n(p* q), m((p - 1)* (q - 1)) {
-		for (int i = 0; i < m % 2 + 1; i++) {
-			if (m % i == 0) {
+		for (int i = 1; i < sqrt(m); i++) {
+			if (m % i == 0&&m!=i) {
 				mys.push_back(i);
 			}
 		}
 		bool jump = false;
 		srand(time(0));
-		for (int i = lengths[0]; i < lengths[sizeof(lengths) / sizeof(lengths[0]) - 1] + 1; i++) {//lengths[sizeof(lengths)/sizeof(lengths[0])-1]用于获取数组最后一个元素的索引
+		for (int i = lengths[0]; i < lengths.size(); i++) {
 			for (int j = pow(10, (i - 1)); j < pow(10, i); j++) {
 				for (auto my : mys) {
 					if (j % my == 0) {
@@ -67,6 +68,7 @@ public:
 					for (int k = 0;; k++) {
 						if (k * j % m == 1) {
 							des[i].push_back(de(j, k, i));
+							break;
 						}
 					}
 				}
@@ -78,7 +80,7 @@ public:
 	yan:
 		int ui = rand();
 
-		if (length < lengths[sizeof(lengths) / sizeof(lengths[0]) - 1]) {
+		if (length < lengths[lengths.size()-1]+1) {
 			de ret = this->des[length][ui % des[length].size()];
 			for (int i = 0; i < udes[length].size(); i++) {
 				if (ret == udes[length][i]) {
