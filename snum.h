@@ -51,7 +51,7 @@ int get_p() {
 			rets.push_back(snums[i]);
 		}
 	}
-	return rets[rand()];
+	return rets[rand()%rets.size()];
 }
 int get_q() {
 	srand(time(0));
@@ -61,5 +61,5 @@ int get_q() {
 			rets.push_back(snums[i]);
 		}
 	}
-	return rets[rand()];
+	return rets[rand()%rets.size()];
 }
