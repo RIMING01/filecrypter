@@ -5,17 +5,17 @@
 #include <cstdlib>
 #include <cmath>
 using namespace std;
-vector<int> get_snums() {
-	vector<int> vec;
-	fstream f("D:\\galaxy\\snum.txt", fstream::in);
+vector<long long int> get_snums() {
+	vector<long long int> vec;
+	fstream f("D:\\galaxy\\snum.txt", ios::in );
 	if (!f) {
 		f.close();
 		f.clear();
-		f.open("D:\\galaxy\\snum.txt");
-		vector<int> snums;
+		f.open("D:\\galaxy\\snum.txt", ios::ate | ios::out);
+		vector<long long int> snums;
 		bool jump = false;
-		int si;
-		for (int i = 1; snums.size() < 1001; i++) {
+		long long int si;
+		for (long long int i = 1; snums.size() < 1001; i++) {
 			si = sqrt(i) + 1;
 			for (int j = 1; j < si; j++) {
 				if (i % j == 0 && i != j) {
@@ -28,7 +28,7 @@ vector<int> get_snums() {
 				continue;
 			}
 			else {
-			snums.push_back(i);
+				snums.push_back(i);
 			}
 		}
 		for (auto num : snums) {
@@ -43,9 +43,9 @@ vector<int> get_snums() {
 	return vec;
 }
 
-int get_p() {
+long long int get_p() {
 	srand(time(0));
-	vector<int> snums(get_snums()),rets;
+	vector<long long int> snums(get_snums()),rets;
 	for (int i = 0; i < snums.size(); i++) {
 		if (i % 2 == 0) {
 			rets.push_back(snums[i]);
@@ -53,9 +53,9 @@ int get_p() {
 	}
 	return rets[rand()%rets.size()];
 }
-int get_q() {
+long long int get_q() {
 	srand(time(0));
-	vector<int> snums(get_snums()), rets;
+	vector<long long int> snums(get_snums()), rets;
 	for (int i = 0; i < snums.size(); i++) {
 		if (i % 2) {
 			rets.push_back(snums[i]);

@@ -65,7 +65,7 @@ public:
 					continue;
 				}
 				else {
-					for (int k = 0;; k++) {
+					for (int k = 1;; k++) {
 						if (k * j % m == 1) {
 							des[i].push_back(de(j, k, i));
 							break;
@@ -125,5 +125,5 @@ private:
 	const int p, q, n, m;
 	vector<int> mys;
 	map<int, vector<de>> des, udes;
-	vector<int> lengths = { 2,3,4 };
+	vector<int> lengths = { 2,3,4,5,6 };
 };

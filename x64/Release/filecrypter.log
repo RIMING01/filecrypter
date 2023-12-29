@@ -1,15 +1,1 @@
-﻿  filecrypter.cpp
-C:\Users\董恒嘉\source\repos\c++\filecrypter\rsa.h(54,13): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-  (编译源文件“filecrypter.cpp”)
-  
-C:\Users\董恒嘉\source\repos\c++\filecrypter\snum.h(19,17): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-  (编译源文件“filecrypter.cpp”)
-  
-C:\Users\董恒嘉\source\repos\c++\filecrypter\snum.h(47,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-  (编译源文件“filecrypter.cpp”)
-  
-C:\Users\董恒嘉\source\repos\c++\filecrypter\snum.h(57,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-  (编译源文件“filecrypter.cpp”)
-  
-  LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能
-  filecrypter.vcxproj -> C:\Users\董恒嘉\source\repos\c++\filecrypter\x64\Release\filecrypter.exe
+﻿LINK : fatal error LNK1104: 无法打开文件“C:\Users\董恒嘉\source\repos\c++\filecrypter\x64\Release\filecrypter.exe”

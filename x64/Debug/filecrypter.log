@@ -1,7 +1,20 @@
 ﻿  filecrypter.cpp
-C:\Users\董恒嘉\source\repos\c++\filecrypter\rsa.h(134,1): fatal  error C1001: 内部编译器错误。
-  (编译器文件“D:\a\_work\1\s\src\vctools\Compiler\CxxFE\sl\p1\c\error.h”，第 1298 行)
-   要解决此问题，请尝试简化或更改上面所列位置附近的程序。
-  如果可以，请在此处提供重现步骤: https://developercommunity.visualstudio.com
-  请选择 Visual C++
-  “帮助”菜单上的“技术支持”命令，或打开技术支持帮助文件来获得详细信息。
+C:\Users\董恒嘉\source\repos\c++\filecrypter\rsa.h(54,13): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  (编译源文件“filecrypter.cpp”)
+  
+C:\Users\董恒嘉\source\repos\c++\filecrypter\snum.h(19,17): warning C4244: “=”: 从“double”转换到“__int64”，可能丢失数据
+  (编译源文件“filecrypter.cpp”)
+  
+C:\Users\董恒嘉\source\repos\c++\filecrypter\snum.h(47,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  (编译源文件“filecrypter.cpp”)
+  
+C:\Users\董恒嘉\source\repos\c++\filecrypter\snum.h(57,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  (编译源文件“filecrypter.cpp”)
+  
+C:\Users\董恒嘉\source\repos\c++\filecrypter\filecrypter.cpp(19,14): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+C:\Users\董恒嘉\source\repos\c++\filecrypter\filecrypter.cpp(19,11): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+C:\Users\董恒嘉\source\repos\c++\filecrypter\filecrypter.cpp(21,55): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+C:\Users\董恒嘉\source\repos\c++\filecrypter\filecrypter.cpp(21,52): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+C:\Users\董恒嘉\source\repos\c++\filecrypter\filecrypter.cpp(61,10): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+C:\Users\董恒嘉\source\repos\c++\filecrypter\filecrypter.cpp(61,23): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+  filecrypter.vcxproj -> C:\Users\董恒嘉\source\repos\c++\filecrypter\x64\Debug\filecrypter.exe

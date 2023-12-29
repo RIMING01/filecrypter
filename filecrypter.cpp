@@ -14,10 +14,10 @@ using namespace std;
 int main(int argc, char** argv ) {
 	
 	if (argc == 3 && argv[1] == "en") {
-		int p = abs(get_p()), q = abs(get_q());
+		long long int p = get_p(), q = get_q();
 		cout << "正在加密中......" << endl;
 		Rsa rsa(p, q);
-		de d(rsa.malloc_pwd(4));
+		de d(rsa.malloc_pwd(3));
 		bool flag = encryptfile(string(argv[2]), rsa, d, p, q);
 		if (flag) {
 			cout << "成功将文件" << argv[2] << "加密保存至" << string(argv[2]) + ".rsa" << endl;
@@ -62,22 +62,7 @@ int main(int argc, char** argv ) {
 			cout << "正在加密中......" << endl;
 			Rsa rsa(p, q);
 			de d;
-			try{
-				d=rsa.malloc_pwd(4);
-			}catch(...) {
-				try {
-					d = rsa.malloc_pwd(3);
-				}
-				catch(...){
-					try {
-						d = rsa.malloc_pwd(2);
-					}
-					catch (...) {
-						throw;
-					}
-				}
-			}
-			
+			d = rsa.malloc_pwd(6);
 			bool flag = encryptfile(fn, rsa, d, p, q);
 			if (flag) {
 				cout << "成功将文件" << fn << "加密保存至" << fn + ".rsa" << endl;
